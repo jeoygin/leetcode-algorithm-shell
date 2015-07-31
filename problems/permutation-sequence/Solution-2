@@ -1,0 +1,22 @@
+public class Solution {
+    public String getPermutation(int n, int k) {
+        char[] num = new char[n];
+        int fact = 1;
+        for (int i = 0; i < n; i++) {
+            num[i] = (char)('0' + i  + 1);
+            fact *= i + 1;
+        }
+        k--;
+        for (int i = 0; i < n; i++) {
+            fact /= n - i;
+            int d = k / fact;
+            char tmp = num[i + d];
+            for (int j = i + d; j > i; j--) {
+                num[j] = num[j - 1];
+            }
+            num[i] = tmp;
+            k %= fact;
+        }
+        return new String(num);
+    }
+}

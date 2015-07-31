@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=u(e),f=c.length,s=i(a,o,r),p=0;f>p;p++)c[p].apply(s,n);return s}function a(t,e){f[t]=u(t).concat(e)}function u(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:u,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=l.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),u=window,c=u.document,f="addEventListener",s="attachEvent",p=(""+location).split("?")[0],l=e.exports={offset:i(),origin:p,features:{}};c[f]?(c[f]("DOMContentLoaded",o,!1),u[f]("load",n,!1)):(c[s]("onreadystatechange",r),u[s]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}]},{},["G9z0Bl"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-2.newrelic.com","queueTime":0,"licenseKey":"8d5fb92f6e","agent":"js-agent.newrelic.com/nr-476.min.js","transactionName":"ZwMAYEdSCktRWxZRXV5JJEFbUBBRX1ZNSEBfBA5RWEABTB5OC11FQ1wTQVBAEFFfVj1cV0QHC1g=","applicationID":"2098939","errorBeacon":"bam.nr-data.net","applicationTime":61}</script>
+    <title>Remove Duplicates from Sorted List | LeetCode OJ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="
+Given a sorted linked list, delete all duplicates such that each element appear only once.
+
+
+For example,
+Given 1-&gt;1-&gt;2, return 1-&gt;2.
+Given 1-&gt;1-&gt;2-&gt;3-&gt;3, return 1-&gt;2-&gt;3.
+" />
+    <meta property="og:title" content="Remove Duplicates from Sorted List | LeetCode OJ" />
+    <meta property="og:image" content="https://oj.leetcode.com/images/logolarge.jpg" />
+    <meta property="og:description" content="
+Given a sorted linked list, delete all duplicates such that each element appear only once.
+
+
+For example,
+Given 1-&gt;1-&gt;2, return 1-&gt;2.
+Given 1-&gt;1-&gt;2-&gt;3-&gt;3, return 1-&gt;2-&gt;3.
+" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160" />
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192" />
+    <meta name="application-name" content="LeetCode Online Judge"/>
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/animate/animate.css" rel="stylesheet">
+    
+
+    <style>
+      body {
+        overflow-y: scroll;
+      }
+      a {
+        color: #0088cc;
+      }
+      a:hover {
+        color: #005580;
+      }
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .block-center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .message {
+         border: 1px solid #e6db55;
+         background-color: #ffffe0;
+         padding: 15px 30px 15px 15px;
+         margin: 20px 0;
+       }
+      .navbar-extra {
+         border-radius: 0px;
+         margin-bottom: 30px;
+      }
+      #chat-link {
+        position: fixed;
+        right: 5px;
+        bottom: 10px;
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        padding: 5px 15px 10px 15px;
+        -webkit-border-radius: 5px 0 0 5px;
+        -moz-border-radius: 5px 0 0 5px;
+        -ms-border-radius: 5px 0 0 5px;
+        -o-border-radius: 5px 0 0 5px;
+        border-radius: 5px 0 0 5px;
+        -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        color: #979faf;
+      }
+      .glyphicon-envelope {
+        text-align: center;
+        line-height: 26px;
+        margin-right: 5px;
+        position: relative;
+      }
+      [ng-cloak] { display: none; }
+      .editor {
+        font-size: 14px !important;
+        border: 1px solid #e0e0e0;
+        height: 475px;
+      }
+      .ac {
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        background-image: url('/static/images/correct.png');
+        background-repeat: no-repeat;
+      }
+      .notac {
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        background-image: url('/static/images/question.png');
+        background-repeat: no-repeat;
+      }
+    </style>
+    
+<link rel="stylesheet" href="/static/CACHE/css/aa0598c0b49c.css" type="text/css" />
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/static/jquery/jquery-1.11.1.min.js"><\/script>')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.3.0/bootstrap-table.min.js"/>
+    <link rel="stylesheet" src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.3.0/bootstrap-table.min.css"/>
+  </head>
+
+  <body>
+    <div id="bootstrap-css-test" class="hide"></div>
+    <script>
+      if ($('#bootstrap-css-test').is(':visible') === true) {
+        $('head').prepend('<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">');
+      }
+    </script>
+    <script>$("#bootstrap-css-test").bootstrapTable || document.write('<script src="/static/bootstrap-table-1.3.0/dist/bootstrap-table.min.js"><\/script>')</script>
+    <span id="fa-check" class="fa" style="display:none"></span>
+    <script>
+      if ($('#fa-check').css('fontFamily') !== 'FontAwesome') {
+        $('head').prepend('<link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">');
+      }
+    </script>
+    
+    <div class="navbar navbar-inverse navbar-extra">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">LeetCode OJ</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li id="problemsNav"><a href="/problems/">Problems</a></li>
+            <li id="pickNav"><a onclick="ga('send', 'event', 'pick-one', 'click');" href="/problems/4sum">Pick One!</a></li>
+            <li id="submissionsNav"><a href="/submissions/">Submissions</a></li>
+            <!-- TODO: not hard code -->
+            
+            <li id=""><a href="/discuss/">Discuss</a></li>
+            
+            
+            <li id="bookNav"><a onclick="ga('send', 'event', 'book', 'click', 'nav-bar');" href="/book/"><font color="#ed9c28">Book</font></a></li>
+            
+            
+            
+              
+            
+          </ul>
+          
+          <div class="navbar-form navbar-right">
+            <a class="btn btn-primary" href="/accounts/signup">Sign up</a>
+            <a class="btn btn-default" href="/accounts/login/">Sign in</a>
+          </div>
+          
+          <!--
+          <form class="navbar-form pull-right">
+            <input class="col-md-2" type="text" placeholder="Email">
+            <input class="col-md-2" type="password" placeholder="Password">
+            <button type="submit" class="btn">Sign in</button>
+          </form>
+          -->
+        </div><!--/.navbar-collapse -->  
+      </div>
+    </div> 
+
+    
+
+<div ng-app="app">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="question-title">
+          <h3 style="display:inline">Remove Duplicates from Sorted List</h3>
+          <span class="total-ac text-info">Total Accepted: <strong>37555</strong></span>
+          <span class="total-submit text-info">Total Submissions: <strong>108990</strong></span>
+          <a class="pull-right btn btn-default" href="/problems/remove-duplicates-from-sorted-list/submissions/">My Submissions</a>
+          
+          <div class="pull-right btn-group right-pad">
+            <button type="button" class="btn btn-default active" onclick="window.location.href='/problems/remove-duplicates-from-sorted-list/'">Question</button>
+            
+              <button type="button" class="btn btn-default" disabled>&nbsp;Solution&nbsp;</button>
+            
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="question-content">
+              <p><p>
+Given a sorted linked list, delete all duplicates such that each element appear only <i>once</i>.
+</p>
+<p>
+For example,<br />
+Given <code>1->1->2</code>, return <code>1->2</code>.<br />
+Given <code>1->1->2->3->3</code>, return <code>1->2->3</code>.
+</p></p>
+              
+                <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
+                <span class="hide">
+                  
+                  <a class="btn btn-xs btn-primary" href="/tag/linked-list/">Linked List</a>
+                  
+                </span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="interviewed_div">
+      <form id="interviewed_form" method="post" action="/interviewed/">
+        <input type='hidden' name='csrfmiddlewaretoken' value='q9Ai7vhNCCOboCgHsEl1T0ezwprlOZCC' />
+        <input type="hidden" name="question_id" value="83" />
+        <input type="hidden" name="feedback" value="Thanks for your feedback."/>
+        <input type="hidden" name="option" />
+      </form>
+      <div id='survey'>
+        <div id='general_questions'>
+          <span>Have you met this question in a real interview?</span>
+          <span class="text-info chosen_option text-bold"></span>
+          <span id="yes_or_no_options"> 
+            <div value=1 id="yes" follow_up="#yes_questions" class='submit btn btn-default btn-xs'>
+              Yes
+            </div>
+            <div value=2 id="no" class='submit btn btn-default btn-xs' follow_up="#no_questions">
+              No
+            </div>
+          </span>
+        </div>
+        <div id="yes_questions" class="hide">
+          <span>When did you meet this question?</span>
+          <span class="text-info chosen_option text-bold"></span>
+          <span>
+            <div value=3 class='submit btn btn-default btn-xs'>
+              1 week ago
+            </div>
+            <div value=4 class='submit btn btn-default btn-xs'>
+              1 month ago
+            </div>
+            <div value=5 class='submit btn btn-default btn-xs'>
+              3 months ago
+            </div>
+            <div value=6 class='submit btn btn-default btn-xs'>
+              6 months ago
+            </div>
+            <div value=7 class='submit btn btn-default btn-xs'>
+              More than 6 months ago
+            </div>
+          </span>
+        </div>
+        <div id="no_questions" class="hide">
+          <span>How long have you been interviewing?</span>
+          <span class="text-info chosen_option text-bold"></span>
+          <span>
+            <div value=8 class='submit btn btn-default btn-xs'>
+              Not yet started
+            </div>
+            <div value=9 class='submit btn btn-default btn-xs'>
+              1 month
+            </div>
+            <div value=10 class='submit btn btn-default btn-xs'>
+              3 months
+            </div>
+            <div value=11 class='submit btn btn-default btn-xs'>
+              6 months
+            </div>
+            <div value=12 class='submit btn btn-default btn-xs'>
+              More than 6 months
+            </div>
+          </span>
+        </div>
+      </div>
+      <div id='interviewed_state'>
+      </div>
+    </div>
+    
+    
+    <p class="action">
+      <a class="btn btn-success btn-pad" href="/discuss/oj/remove-duplicates-from-sorted-list">Discuss</a>
+    </p>
+    
+    <hr>
+  </div>
+  <form class="container" id="ajaxform" method="post" action="/problems/remove-duplicates-from-sorted-list/submit/" ng-controller="AceCtrl">
+    <input type='hidden' name='csrfmiddlewaretoken' value='q9Ai7vhNCCOboCgHsEl1T0ezwprlOZCC' />
+    <input type="hidden" name="question_id" value="83" />
+    <input type="hidden" name="judge_type" value="large" />
+    <input type="hidden" name="data_input" value="" />
+    <div class="row" style="margin-bottom:12px;">
+      <div class="col-md-2">
+        <select class="form-control" name="lang" ng-model="selectedLang" ng-options="lang.text for lang in langs track by lang.value"></select>
+      </div>
+      <button class="btn btn-default" data-toggle="modal" data-target="#confirmReset" type="button"><span class="glyphicon glyphicon-refresh"></span></button>
+      <div class="modal fade" id="confirmReset" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">Reset to default code definition</h4>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to reset your code?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary" ng-click="resetCode()" data-dismiss="modal">Reset Code</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12" ng-init="init([{'value': 'cpp', 'text': 'C++', 'defaultCode': '/**\u000D\u000A * Definition for singly\u002Dlinked list.\u000D\u000A * struct ListNode {\u000D\u000A *     int val\u003B\u000D\u000A *     ListNode *next\u003B\u000D\u000A *     ListNode(int x) : val(x), next(NULL) {}\u000D\u000A * }\u003B\u000D\u000A */\u000D\u000Aclass Solution {\u000D\u000Apublic:\u000D\u000A    ListNode *deleteDuplicates(ListNode *head) {\u000D\u000A        \u000D\u000A    }\u000D\u000A}\u003B' },{'value': 'java', 'text': 'Java', 'defaultCode': '/**\u000D\u000A * Definition for singly\u002Dlinked list.\u000D\u000A * public class ListNode {\u000D\u000A *     int val\u003B\u000D\u000A *     ListNode next\u003B\u000D\u000A *     ListNode(int x) {\u000D\u000A *         val \u003D x\u003B\u000D\u000A *         next \u003D null\u003B\u000D\u000A *     }\u000D\u000A * }\u000D\u000A */\u000D\u000Apublic class Solution {\u000D\u000A    public ListNode deleteDuplicates(ListNode head) {\u000D\u000A        \u000D\u000A    }\u000D\u000A}' },{'value': 'python', 'text': 'Python', 'defaultCode': '# Definition for singly\u002Dlinked list.\u000D\u000A# class ListNode:\u000D\u000A#     def __init__(self, x):\u000D\u000A#         self.val \u003D x\u000D\u000A#         self.next \u003D None\u000D\u000A\u000D\u000Aclass Solution:\u000D\u000A    # @param head, a ListNode\u000D\u000A    # @return a ListNode\u000D\u000A    def deleteDuplicates(self, head):\u000D\u000A        ' },], '83');">
+        <div ng-switch on="selectedLang.value">
+        
+          <div ui-ace="aceOption('cpp')" ng-model="code.cpp" ng-switch-when="cpp" class="editor" ng-cloak></div>
+        
+          <div ui-ace="aceOption('java')" ng-model="code.java" ng-switch-when="java" class="editor" ng-cloak></div>
+        
+          <div ui-ace="aceOption('python')" ng-model="code.python" ng-switch-when="python" class="editor" ng-cloak></div>
+        
+        </div>
+      </div> 
+    </div>
+    <input type="hidden" name="typed_code" />
+    <div class="action">
+      
+        <button id="button1" class="btn btn-primary btn-pad" type="submit" disabled>Submit Solution</button>
+        <a class="btn btn-link text-warning" href="/accounts/login/?next=/problems/remove-duplicates-from-sorted-list/">You have not signed in, cannot submit your code.</a>
+      
+      <span id="submit_wait" class="hide loading-center">
+          <img src="/static/images/loading.gif" class="img-rounded" />
+      </span>
+      <div id="submit_error" class="btn text-danger hide">Submit failed, try again please.</div>
+      <div id="submit_warning" class="btn text-danger hide"></div>
+    </div>
+  </form>
+
+  <style>
+  .pad-left {
+    padding-left: 10px;
+  }
+  .pad-right {
+    padding-right: 30px;
+  }
+  .testcase-label {
+    color: #B25150;
+  }
+  .testcase-table {
+    border-collapse: separate;
+    border-spacing: 5px;
+    font-family: Menlo,Monaco,Consolas,'Courier New',monospace-webkit-body;
+    white-space: pre;
+  }
+  .btn-outline {
+    border: 1px solid #cfcfcf;
+    background: 0 0;
+  }
+  .btn-alt {
+    -webkit-border-radius: 2em;
+    -webkit-border-radius: 2em;
+    border-radius: 2em;
+    padding: 8px 18px;
+  }
+  #reveal-solution {
+    margin-left: 15px;
+  }
+  #more-details {
+    margin-left: 15px;
+  }
+</style>
+<script>
+  $(function() {
+    $('#reveal-solution').click(function(e) {
+      ga('send', 'event', 'reveal-solution', 'click', 'remove-duplicates-from-sorted-list');
+    });
+  });
+</script>
+
+<div ng-controller="PollerCtrl">
+  <div id="result" class="hide container">
+    <hr>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-8">
+            <h4>Submission Result: <a id="result_state" ng-cloak ng-class="{'blue': 'text-info', 'green': 'text-success', 'red': 'text-danger'}[statusColor]">{[{ statusText }]}</a><span class="animated fadeInLeft" ng-cloak ng-show="statusText !== 'Pending' && statusText !== 'Judging'"><a id="more-details" class="btn btn-outline btn-alt" href="">More Details <i class="fa fa-chevron-right"></i></a></span>
+            </h4>
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <div ng-show="statusText === 'Accepted'" class="animated fadeInLeft">
+              <h4><small>Share your acceptance!</small></h4>
+              <div class="addthis_sharing_toolbox" data-title="#LeetCode# I have solved Remove Duplicates from Sorted List. Come and join the fun!"></div>
+            </div>
+            
+          </div>
+        </div>
+        <div id="last_executed_testcase_output_row" ng-cloak ng-show="showLastTestCase()">
+          <div class="alert alert-danger col-md-12">
+            <table class="testcase-table">
+              <tr id="runtime_error_row" ng-cloak ng-show="runtimeError">
+                <td class="pad-left testcase-label" style="padding-right: 15px;">Runtime Error Message:</td>
+                <td id="runtime_error_output" class="text-danger line-wrap" style="font-weight: bold;">{[{ runtimeError }]}</td>
+              </tr>
+              <tr>
+                <td class="pad-left testcase-label" style="padding-right: 15px;">Last executed input:</td>
+                <td id="last_executed_testcase_output" class="text-danger line-wrap" style="font-weight: bold;">{[{ lastExecutedTestCase }]}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div id="result_code_output_row" ng-cloak ng-show="resultCodeOutput">
+          <div id="result_code_output" class="alert alert-danger">{[{ resultCodeOutput }]}</div>
+        </div>
+        <div id="wa_output" ng-cloak ng-show="showWaTestCase()">
+          <div class="alert alert-danger col-md-12">
+            <table class="testcase-table">
+              <tr style="color: #333;">
+                <td class="pad-left testcase-label">Input:</td>
+                <td id="result_wa_testcase_input" class="line-wrap" style="font-weight: bold">{[{ resultWaTestCaseInput }]}</td>
+              </tr>
+              <tr class="text-danger">
+                <td class="pad-left testcase-label">Output:</td>
+                <td id="result_wa_testcase_output" class="line-wrap" style="font-weight: bold">{[{ resultWaTestCaseOutput }]}</td>
+              </tr>
+              <tr class="text-success">
+                <td class="pad-left pad-right testcase-label">Expected:</td>
+                <td id="result_wa_testcase_expected" class="line-wrap" style="font-weight: bold">{[{ resultWaTestCaseExpected }]}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+ 
+    
+    <div class="container">
+      <hr>
+    </div> <!-- /container --> 
+    <footer>
+    <p class="text-center">
+      <a href="/faq/">Frequently Asked Questions</a> | 
+      <a href="/tos/">Terms of Service</a>
+    </p>
+    <p class="text-center">
+      <a href="//www.iubenda.com/privacy-policy/499831" class="iubenda-white iubenda-embed" title="Privacy Policy">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+    </p>
+    <p class="text-center">Copyright © 2014 LeetCode</p> 
+    </footer>
+    
+
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.19/angular.min.js"></script>
+<script>window.angular || document.write('<script src="/static/jslib/angular/angular.min.js"><\/script>')</script>
+<script type="text/javascript" src="/static/CACHE/js/0a5233ce4f53.js"></script>
+<script>
+  function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+  }
+
+  $(function() {
+    if ($('.spoilers').length > 0) {
+      $('.spoilers').hide();
+      $('.showspoilers').click(function(e) {
+        if ($('.spoilers').is(":visible"))  {
+          $('.spoilers').hide();
+        } else {
+          $('.spoilers').show();
+        }
+        return false;
+      });
+    }
+    $('#tags').click(function(e) {
+      $('#tags + span').removeClass('hide');
+      if ('Hide Tags' === $(this).text()) {
+        $(this).text('Show Tags');
+        $('a', '#tags + span').removeClass('animated fadeIn');
+        $('a', '#tags + span').addClass('animated fadeOut');
+        ga('send', 'event', 'hide-tag', 'click', 'remove-duplicates-from-sorted-list');
+      } else {
+        $(this).text('Hide Tags');
+        $('a', '#tags + span').removeClass('animated fadeOut');
+        $('a', '#tags + span').addClass('animated fadeIn');
+        ga('send', 'event', 'show-tag', 'click', 'remove-duplicates-from-sorted-list');
+      };
+    });
+    $('.submit').click(function(e) {
+      $(this).parent().hide();
+      $(this).parent().siblings(".chosen_option").text($(this).text());
+      $('#interviewed_form input[name=option]').attr('value', $(this).attr('value'));
+      if ($(this).attr('follow_up') !== undefined) {
+        $('#interviewed_form input[name=feedback]').attr('value', '');
+      } else {
+        $('#interviewed_form input[name=feedback]').attr('value', 'Thanks for your feedback.');
+      }
+      $($(this).attr('follow_up')).removeClass("hide");
+      $('#interviewed_form').submit();
+      ga('send', 'event', 'interview-survey', 'click', $(this).attr('value'));
+    });
+    $('#interviewed_form').submit(function(e) {
+      e.preventDefault();
+      $.ajaxSetup({
+        crossDomain: false, // obviates need for sameOrigin test
+        beforeSend: function(xhr, settings) {
+          if (!csrfSafeMethod(settings.type)) {
+            xhr.setRequestHeader("X-CSRFToken", $.cookie('csrftoken'));
+          }
+        },
+      });
+      $.ajax({
+        type: "POST",
+        url: this.action,
+        dataType: "json",
+        data: $(this).serialize(),
+        success: function(data) {
+          if (data['result'] === 'success') {
+            $("#interviewed_state").addClass('text-success');
+            $("#interviewed_state").text(data['feedback']);
+          } else if (data['result'] === 'anonymous') {
+            window.location.href = "/accounts/login/?next=/problems/remove-duplicates-from-sorted-list/";
+          }
+          
+            if (data['result'] === 'no_permission') {
+              window.location.href = "/unpaid/";
+            }
+          
+        },
+        error: function(data) {
+          $("#interviewed_state").addClass('text-danger');
+          $("#interviewed_state").text("Sorry, internal error.");
+        }
+      });
+    });
+    $('#ajaxform').submit(function(e) {
+      e.preventDefault();
+      $("#button1").attr("disabled", "disabled");
+      $("#submit_wait").removeClass('hide');
+      $("#submit_warning").addClass('hide');
+      $("#submit_error").addClass('hide');
+
+      var scope = angular.element('[ng-controller=AceCtrl]').scope();
+      $('input[name="typed_code"]').val(scope.code[scope.selectedLang.value]);
+
+      $.ajaxSetup({
+        crossDomain: false, // obviates need for sameOrigin test
+        beforeSend: function(xhr, settings) {
+          if (!csrfSafeMethod(settings.type)) {
+            xhr.setRequestHeader("X-CSRFToken", $.cookie('csrftoken'));
+          }
+        },
+      });
+      $.ajax({
+        type: "POST",
+        url: this.action,
+        dataType: "json",
+        data: $(this).serialize(),
+        success: function(data) {
+          $("#button1").removeAttr("disabled");
+          $("#submit_wait").addClass('hide');
+          if (data.error) {
+            $("#submit_warning").removeClass("hide");
+            $("#submit_warning").text(data.error);
+          } else {
+            $("#result").removeClass('hide');
+            var tmpHref = "/submissions/detail/0/";
+            tmpHref = tmpHref.substring(0, tmpHref.lastIndexOf('/'));
+            tmpHref = tmpHref.substring(0, tmpHref.lastIndexOf('/') + 1);
+            tmpHref += data.submission_id + "/";
+            $("#result_state").attr('href', tmpHref);
+            $("#more-details").attr('href', tmpHref);
+            var url = tmpHref + 'check/';
+            var scope = angular.element('[ng-controller=PollerCtrl]').scope();
+            scope.startPoll(url);
+            scope.$apply();
+          }
+        },
+        error: function(data) {
+          $("#button1").removeAttr("disabled");
+          $("#submit_wait").addClass('hide');
+          $("#submit_error").removeClass('hide');
+        }
+      });
+    });
+  });
+
+</script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54828cb901e9e86a" async="async"></script>
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>$.fn.modal || document.write('<script src="/static/bootstrap/js/bootstrap.min.js"><\/script>')</script>
+
+    <a href="mailto:admin@leetcode.com?subject=Feedback" id="chat-link" target="_blank">
+    <i class="glyphicon glyphicon-envelope"></i>Send Feedback</a>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-6849839-6', 'leetcode.com');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script>
+  </body>
+</html>
